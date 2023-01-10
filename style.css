@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+    font-size: 14px;
+    background: linear-gradient(to right bottom, rgba(75, 128, 66, 0.8), rgba(35, 101, 79, 0.8)), url('hero.jpg');
+    background-repeat: no-repeat;
+    background-size: center center;
+
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.card {
+    position: relative;
+    width: 600px;
+    height: 450px;
+    background: #fff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    transition: 0.5s ease-in-out;
+    border-radius: 10px;
+  }
+  .card .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .card .circle:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(75, 128, 66, 0.8);
+    clip-path: circle(120px at center);
+    transition: .5s;
+  }
+  .card:hover .circle:before{
+    background: gold;
+    clip-path: circle(400px at center);
+
+  }
+  .img{
+    border: none !important; 
+    outline: none !important; 
+    box-shadow: none !important;
+  }
+  .card .img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .card:hover .img{
+    left: 72%;
+    height: 500px;
+  }
+
+  .card .details {
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+  
+  
+   .card:hover .details {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+
+  }
+  
+  .card .details h6 {
+    color: hsl(228, 12%, 48%);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1em;
+    letter-spacing: 3px;
+  }
+  
+  .card .details h2 {
+    color: hsl(212, 21%, 14%);
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1em;
+  } 
+  
+  .card .details p {
+      color:hsl(228, 12%, 48%);
+      line-height: 1.7em;
+      font-size: 14px;
+      font-weight: 500;
+  }
+  
+  
+  .card .details .price {
+      display: flex;
+      align-items: center;
+  }
+  .card .details .price .current-price {
+      color: #3c8067;
+      font-size: 25px;
+      padding-right: 25px;
+      font-weight: 700;
+  }
+  .card .details .price .old-price {
+      text-decoration: line-through;
+      color: #6c7289;
+  }
+  
+  .cart{
+
+      position: relative;
+      color: #FFF;
+      padding: 14px 0;
+      border-radius: 15px;
+      background-color: hsl(158, 36%, 37%);
+      display: inline-block;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 15px 15px rgba(0, 0, 0, 0.288);
+      width: 100%;
+      text-align: center;
+  }
+  
+  .cart:hover{
+      background-color: #264f3f;
+      -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+      transform: translateY(-3px);
+  }
+  .cart img{
+      padding-right: 8px;
+  }
+  
+  @media(max-width:630px){
+    .card{
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+        margin: 10px;
+    }
+    .card:hover{
+        height: 640px;
+    }
+    .card .details{
+        width: 100%;
+        left: 0;
+        padding: 30px;
+    }
+    .card:hover .img{
+        top: 70%;
+        left: 50%;
+        height: 320px;
+    }
+  }
+  @media(max-width: 300px){
+    .card .details{
+        width: 100%;
+        left: 0;
+        padding: 20px;
+    }
+  }
